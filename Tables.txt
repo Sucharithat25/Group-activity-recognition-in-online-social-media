@@ -1,0 +1,90 @@
+
+create database a_HAttention;
+
+use a_HAttention;
+
+
+CREATE TABLE `admin` (
+  `username` varchar(50) default NULL,
+  `password` varchar(50) default NULL
+);
+
+INSERT INTO `admin` VALUES ('admin','admin');
+
+CREATE TABLE `categories` (
+  `si_no` int(11) NOT NULL auto_increment,
+  `categorie` varchar(50) default NULL,
+  PRIMARY KEY  (`si_no`)
+);
+
+CREATE TABLE `friendsearch` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(45) default NULL,
+  `keyword` varchar(45) default NULL,
+  `dt` varchar(45) default NULL,
+  PRIMARY KEY  (`id`)
+);
+CREATE TABLE `postrecommendtofriend` (
+  `id` int(11) NOT NULL auto_increment,
+  `recommendfrom` varchar(45) default NULL,
+  `recommendto` varchar(45) default NULL,
+  `p_name` varchar(45) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL auto_increment,
+  `i_name` text,
+  `i_uses` text,
+  `p_desc` text,
+  `p_image` longblob,
+  `categorie` text,
+  `rank` int(11) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+
+CREATE TABLE `request` (
+  `id` int(11) NOT NULL auto_increment,
+  `requestfrom` varchar(45) default NULL,
+  `requestto` varchar(45) default NULL,
+  `dt` varchar(45) default NULL,
+  `status` varchar(45) default NULL,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `search` (
+  `id` int(11) NOT NULL auto_increment,
+  `user` text,
+  `p_name` text,
+  `categorie` text,
+  `keyword` text,
+  `dt` text,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(45) default NULL,
+  `password` varchar(45) default NULL,
+  `email` varchar(45) default NULL,
+  `mobile` varchar(45) default NULL,
+  `address` varchar(45) default NULL,
+  `dob` varchar(45) default NULL,
+  `gender` varchar(45) default NULL,
+  `pincode` varchar(45) default NULL,
+  `status` varchar(45) default NULL,
+  `image` longblob,
+  PRIMARY KEY  (`id`)
+);
+
+CREATE TABLE `userreviews` (
+  `id` int(11) NOT NULL auto_increment,
+  `rec_by` text,
+  `rec_details` text,
+  `p_name` text,
+  `categorie` text,
+  `dt` text,
+  PRIMARY KEY  (`id`)
+);
+
